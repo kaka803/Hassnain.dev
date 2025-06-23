@@ -11,7 +11,7 @@ import {
 
 import Autoplay from "embla-carousel-autoplay";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis'
 import Contact from "./components/contact";
 import Navbar from "./components/navbar";
 import { FaEnvelope } from "react-icons/fa";
