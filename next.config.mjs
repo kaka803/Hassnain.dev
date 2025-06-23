@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  rules: {
-    'react/no-unescaped-entities': 'off',
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;

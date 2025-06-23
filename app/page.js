@@ -369,7 +369,7 @@ const handleScrollTo = (id) => {
               ref={headingRef}
               className="text-4xl md:text-6xl font-bold leading-tight"
             >
-              I'm Hassnain — I build{" "}
+              I&#39;m Hassnain — I build{" "}
               <span
                 ref={highlightRef}
                 className="inline-block text-purple-400"
@@ -618,7 +618,7 @@ const handleScrollTo = (id) => {
   ref={descRef}
   className="max-w-2xl text-gray-300 text-lg leading-relaxed flex flex-wrap justify-center gap-y-1"
 >
-  {`I'm Hassnain — a passionate full-stack web developer. I specialize in building modern, fast, and scalable web applications using technologies like Next.js, Tailwind CSS, and MongoDB.`.split("").map((char, index) => (
+  {`I&#39;m Hassnain — a passionate full-stack web developer. I specialize in building modern, fast, and scalable web applications using technologies like Next.js, Tailwind CSS, and MongoDB.`.split("").map((char, index) => (
     <span
       key={index}
       className="inline-block opacity-0"
