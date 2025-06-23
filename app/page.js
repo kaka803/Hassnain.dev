@@ -382,7 +382,7 @@ const handleScrollTo = (id) => {
   ref={subtitleContainerRef}
   className="text-lg md:text-xl text-gray-300 flex flex-wrap gap-y-1 justify-center"
 >
-  {"Crafting fast, modern, and scalable web applications using Next.js, Tailwind CSS, MongoDB, and custom authentication systems.".split("").map(
+  {`Crafting fast, modern, and scalable web applications using Next.js, Tailwind CSS, MongoDB, and custom authentication systems.`.split("").map(
     (char, i) => (
       <span
         key={i}
@@ -618,7 +618,7 @@ const handleScrollTo = (id) => {
   ref={descRef}
   className="max-w-2xl text-gray-300 text-lg leading-relaxed flex flex-wrap justify-center gap-y-1"
 >
-  {"I'm Hassnain — a passionate full-stack web developer. I specialize in building modern, fast, and scalable web applications using technologies like Next.js, Tailwind CSS, and MongoDB.".split("").map((char, index) => (
+  {`I'm Hassnain — a passionate full-stack web developer. I specialize in building modern, fast, and scalable web applications using technologies like Next.js, Tailwind CSS, and MongoDB.`.split("").map((char, index) => (
     <span
       key={index}
       className="inline-block opacity-0"
