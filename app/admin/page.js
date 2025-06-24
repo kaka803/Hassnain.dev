@@ -18,39 +18,48 @@ export default function AdminDashboard() {
   const [link, setlink] = useState('')
   const [showForm, setShowForm] = useState(false);
   const [user, setuser] = useState()
-  
+  const [loading, setloading] = useState(false)
 
- 
+ const convertToBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+  });
 
   const handleAddProject = async () => {
-    
+    setloading(true);
     if(!image || !title || !description || !tags || !link) {
       alert("Please fill in all fields");
       return;
       
     }
-    const imageUrl = await handleImageUpload(image)
-    const res = await fetch("/api/addproject", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ image: { url: imageUrl }, title, description, tags, link }),
-      });
-    if (!res.ok) {
-      console.error('Failed to add project');
-      return;
-    }
+    
+    const base64 = await convertToBase64(image); // input type=file
+
+  const res = await fetch("/api/upload", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      imageBase64: base64,
+      title: title,
+      description: description,
+      tags: tags,
+      link: link,
+    }),
+  });
     const Data = await res.json();
+
     settitle('');
     setdescription('');
     settags('');
     setlink('');
     setimage('');
+    setloading(false);
     alert('Project added successfully');
     setShowForm(false);
     window.location.reload();
-
     if(Data){
       console.log(Data);
       
@@ -291,7 +300,7 @@ const handleDelete = async (id) => {
               onClick={handleAddProject}
               className="bg-purple-600 hover:bg-purple-700"
             >
-              Save Project
+              { loading ? 'loading...': 'Save Project'}
             </Button>
           </div>
         </div>

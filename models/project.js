@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const projectScheme = new mongoose.Schema(
   {
     image: {
-      type: Object, 
+      url: String,
+      public_id: String,
     },
     title: {
       type: String,
@@ -15,16 +16,15 @@ const projectScheme = new mongoose.Schema(
       required: true,
     },
     tags: {
-      type: String, 
+      type: String
     },
     link: {
       type: String,
       required: true,
     },
-    
   },
   {
-    timestamps: true, // adds createdAt and updatedAt fields automatically
+    timestamps: true,
   }
 );
 
