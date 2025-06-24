@@ -523,16 +523,19 @@ const handleScrollTo = (id) => {
 >
   <div
     ref={(el) => (cardsRef.current[i] = el)}
-    className="bg-[#1e1e2f] rounded-xl shadow-lg overflow-hidden border border-purple-600/10 transition-transform hover:scale-[1.02] duration-300 mx-auto flex flex-col md:flex-row h-auto"
+    className="bg-[#1e1e2f] rounded-xl shadow-lg overflow-hidden border border-purple-600/10 transition-transform hover:scale-[1.02] duration-300 mx-auto flex flex-col md:flex-row"
   >
     {/* Image Section */}
-    <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-auto md:h-full max-h-[250px] md:max-h-full overflow-hidden">
-  <img
-    src={project.image.url}
-    alt={project.title}
-    className="w-full h-full object-cover"
-  />
-</div>
+    <div className="w-full md:w-1/2">
+      <div className="w-full h-[200px] md:h-[320px] overflow-hidden">
+        <img
+          src={project.image.url}
+          alt={project.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
     {/* Content Section */}
     <div
       ref={(el) => (contentRefs.current[i] = el?.children)}
@@ -543,7 +546,7 @@ const handleScrollTo = (id) => {
           {project.title}
         </h3>
 
-        <p className="text-sm text-gray-300 overflow-y-auto max-h-[80px] pr-1 custom-scroll mt-2">
+        <p className="text-sm text-gray-300 overflow-y-auto max-h-[160px] pr-1 custom-scroll mt-2">
           {project.description}
         </p>
 
@@ -574,6 +577,11 @@ const handleScrollTo = (id) => {
     </div>
   </div>
 </CarouselItem>
+
+
+
+
+
 
 
           ))}
