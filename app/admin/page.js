@@ -157,7 +157,6 @@ const handleDelete = async (id) => {
     const data = await res.json();
     if (res.ok) {
       alert("Project deleted ✅");
-      // Optionally refetch or filter it from state
       setProjects(prev => prev.filter(p => p._id !== id));
     } else {
       alert(data.error || "Delete failed");
