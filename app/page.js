@@ -626,15 +626,16 @@ const handleScrollTo = (id) => {
   ref={descRef}
   className="max-w-2xl text-gray-300 text-lg leading-relaxed flex flex-wrap justify-center gap-y-1"
 >
-  {`I&#39;m Hassnain — a passionate full-stack web developer. I specialize in building modern, fast, and scalable web applications using technologies like Next.js, Tailwind CSS, and MongoDB.`.split("").map((char, index) => (
-    <span
-      key={index}
-      className="inline-block opacity-0"
-      style={{ whiteSpace: char === " " ? "pre" : "normal" }}
-    >
-      {char}
-    </span>
-  ))}
+  {`I am Hassnain — a dedicated full-stack web developer with a strong foundation in both front-end and back-end technologies. I specialize in creating fast, modern, and responsive web applications using HTML, CSS, JavaScript, React.js, Next.js, Tailwind CSS, Node.js, and Express. With an academic background in computer science and a passion for continuous learning, I'm currently pursuing a Bachelor's in CS. I blend functionality with design to craft seamless digital experiences.`.split("").map((char, index) => (
+  <span
+    key={index}
+    className="inline-block opacity-0"
+    style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+  >
+    {char}
+  </span>
+))}
+
 </p>
 <div className="flex gap-6 mt-6 z-10">
   <a
